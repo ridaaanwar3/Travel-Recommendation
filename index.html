@@ -1,129 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Travel Recommendation</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-
-        nav {
-            background-color: #222;
-            padding: 18px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 18px;
-        }
-
-        nav a:hover {
-            color: #00bcd4;
-        }
-
-        section {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        #home {
-            background-color: #e0f7fa;
-            min-height: 300px;
-        }
-
-        h1 {
-            font-size: 40px;
-        }
-
-        h2 {
-            font-size: 30px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        #about {
-            background-color: white;
-        }
-
-        #contact {
-            background-color: #e8f5e9;
-        }
-
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
 
-    <!-- Home Page -->
-    <section id="home">
-        <h1>Welcome to Travel Recommendation</h1>
+            <div class="logo">
+                Travel Recommendation
+            </div>
 
-        <p>
-            Discover amazing destinations and find the best places to visit.
-            Our Travel Recommendation website helps travelers explore beautiful
-            destinations and plan memorable trips. Whether you are looking for
-            relaxing beaches, historical places, or exciting adventures, we
-            provide useful travel recommendations to make your journey easier
-            and more enjoyable.
-        </p>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <h1>Explore the World</h1>
+
+            <p>
+                Welcome to Travel Recommendation! Discover beautiful
+                destinations, exciting places, and unforgettable travel
+                experiences. Find the perfect destination for your next
+                adventure.
+            </p>
+
+            <a href="#destinations" class="btn">
+                Explore Destinations
+            </a>
+
+        </div>
+
     </section>
 
+
+    <!-- Destinations -->
+    <section id="destinations" class="destinations">
+
+        <h2>Recommended Destinations</h2>
+
+        <p class="section-intro">
+            Explore some amazing destinations for your next journey.
+        </p>
+
+        <div class="destination-container">
+
+            <div class="destination-card">
+
+                <img src="images/paris.jpg" alt="Paris">
+
+                <h3>Paris</h3>
+
+                <p>
+                    Experience the beauty, culture, and famous landmarks
+                    of Paris.
+                </p>
+
+                <button onclick="showMessage('Paris')">
+                    Learn More
+                </button>
+
+            </div>
+
+
+            <div class="destination-card">
+
+                <img src="images/maldives.jpg" alt="Maldives">
+
+                <h3>Maldives</h3>
+
+                <p>
+                    Relax on beautiful beaches and enjoy the peaceful
+                    atmosphere of the Maldives.
+                </p>
+
+                <button onclick="showMessage('Maldives')">
+                    Learn More
+                </button>
+
+            </div>
+
+
+            <div class="destination-card">
+
+                <img src="images/turkey.jpg" alt="Turkey">
+
+                <h3>Turkey</h3>
+
+                <p>
+                    Discover historical places, beautiful scenery, and
+                    amazing Turkish culture.
+                </p>
+
+                <button onclick="showMessage('Turkey')">
+                    Learn More
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
     <!-- About Us -->
-    <section id="about">
+    <section id="about" class="about">
+
         <h2>About Us</h2>
 
         <p>
-            Travel Recommendation is a website created to help people discover
-            interesting travel destinations. Our goal is to provide simple and
-            useful information so travelers can choose destinations according
-            to their interests and enjoy their trips.
+            Travel Recommendation is a website designed to help travelers
+            discover interesting and beautiful destinations around the world.
+            Our goal is to make travel planning easier by providing useful
+            recommendations for different types of travelers.
         </p>
+
+        <p>
+            Whether you are looking for relaxing beaches, historical places,
+            cultural experiences, or exciting adventures, our website can help
+            you find a destination that matches your interests.
+        </p>
+
     </section>
 
+
     <!-- Contact Us -->
-    <section id="contact">
+    <section id="contact" class="contact">
+
         <h2>Contact Us</h2>
 
         <p>
-            If you have any questions, suggestions, or feedback, feel free to
-            contact us.
+            Have a question or suggestion? We would love to hear from you.
         </p>
 
-        <p>
-            Email: travelrecommendation@example.com
-        </p>
+        <form onsubmit="submitForm(event)">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                id="message"
+                placeholder="Your Message"
+                rows="5"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
     </section>
 
+
+    <!-- Footer -->
     <footer>
-        <p>© 2026 Travel Recommendation. All Rights Reserved.</p>
+
+        <p>
+            © 2026 Travel Recommendation. All Rights Reserved.
+        </p>
+
     </footer>
 
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
